@@ -1,8 +1,17 @@
-CREATE TABLE users  (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL UNIQUE,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    role ENUM('funcionario', 'gerente', 'adm') DEFAULT 'funcionario',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+const { Sequelize } = require('sequelize');
+const path = require('path');
+
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: path.join(__dirname, '..', 'database.sqlite')
+});
+
+sequelize.authenticate()
+  .then(() => {
+    console.log('Connection to the SQLite database has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
+module.exports = sequelize;
