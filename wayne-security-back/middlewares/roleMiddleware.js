@@ -1,4 +1,4 @@
-const Role = require('../models/role');
+const Role = require('../models/roles');
 
 const authorizeRole = (requiredRole) => {
   return async (req, res, next) => {

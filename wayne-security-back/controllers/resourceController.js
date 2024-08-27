@@ -1,4 +1,4 @@
-const Resource = require('../models/Resource');
+const Resource = require('../routes/resource');
 
 // E se eu fazer um exposed dela so de meme sera q da ruim?
 exports.addResource = async (req, res) => {
