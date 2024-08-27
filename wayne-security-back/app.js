@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path')
 const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -10,7 +11,11 @@ const Resource = require('./routes/resource');
 dotenv.config();
 
 const app = express();
-app.use(express.json());
+app.use(express.static(path.join(__dirname , './wayne-security-front/public')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname , './wayne-security-front/public', 'index.html'));
+});
 
 sequelize.sync({ force: true }).then(() => {
     console.log("Database & tables created!");
