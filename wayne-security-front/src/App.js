@@ -2,32 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import ControleAcesso from './pages/ControleAcesso';
-import GerenciamentoRecursos from './pages/GerenciamentoRecursos';
-import Dashboard from './pages/Dashboard';
-
-function App() {
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/controle-acesso" element={<ControleAcesso />} />
-        <Route path="/gerenciamento-recursos" element={<GerenciamentoRecursos />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </Router>
-  );
-}
+import Navbar from './Navbar';
+import ControleAcesso from './ControleAcesso';
+import GerenciamentoRecursos from './GerenciamentoRecursos';
+import ResourceForm from './ResourceForm';
+import ResourceList from './ResourceList';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <p>Edit <code>src/App.js</code> and save to reload.</p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -37,6 +23,14 @@ function App() {
           Learn React
         </a>
       </header>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/controle-acesso" element={<ControleAcesso />} />
+          <Route path="/gerenciamento-recursos" element={<GerenciamentoRecursos />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
