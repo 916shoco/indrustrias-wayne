@@ -1,5 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import ControleAcesso from './pages/ControleAcesso';
+import GerenciamentoRecursos from './pages/GerenciamentoRecursos';
+import Dashboard from './pages/Dashboard';
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/controle-acesso" element={<ControleAcesso />} />
+        <Route path="/gerenciamento-recursos" element={<GerenciamentoRecursos />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
+  );
+}
 
 function App() {
   return (
