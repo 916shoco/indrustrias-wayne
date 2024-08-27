@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Navbar';
 import ControleAcesso from './ControleAcesso';
 import GerenciamentoRecursos from './GerenciamentoRecursos';
-import ResourceForm from './ResourceForm';
-import ResourceList from './ResourceList';
+import Dashboard from './pages/Dashboard';
+
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/controle-acesso" element={<ControleAcesso />} />
-          <Route path="/gerenciamento-recursos" element={<GerenciamentoRecursos />} />
+          <Route path="gerenciamento-recursos" element={<GerenciamentoRecursos />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
