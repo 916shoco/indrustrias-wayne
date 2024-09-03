@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ResourceForm from '../components/ResourceForm';
-import ResourceList from '../components/ResourceList';
+import ResourceForm from './components/ResourceForm';
+import ResourceList from './components/ResourceList';
 
 const GerenciamentoRecursos = () => {
   const [resources, setResources] = useState([]);
